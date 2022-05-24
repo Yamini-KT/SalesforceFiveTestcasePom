@@ -46,7 +46,9 @@ public class GenerateReportsListener extends BaseTest implements ITestListener {
 
 
 	public void onTestStart(ITestResult result) {
-		logger = extent.createTest(result.getMethod().getMethodName());
+		ITestContext context = result.getTestContext();
+		String browserType = (String)context.getAttribute("browserType");
+		logger = extent.createTest(browserType + "_" + result.getMethod().getMethodName());
 	}
 
 
@@ -61,10 +63,11 @@ public class GenerateReportsListener extends BaseTest implements ITestListener {
 		}
 
 		logger.log(Status.FAIL, MarkupHelper.createLabel(result.getMethod().getMethodName() + " failed the Test", ExtentColor.RED));
-
+		ITestContext context = result.getTestContext();
+		WebDriver driver = (WebDriver)context.getAttribute("driver");
 		String methodName=result.getName().toString().trim();
-
-		takeScreenShot(methodName);
+		String browserType = (String)context.getAttribute("browserType");
+		takeScreenShot(methodName,browserType, driver);
 	}
 
 
@@ -84,15 +87,16 @@ public class GenerateReportsListener extends BaseTest implements ITestListener {
 	}
 
 
-	public void takeScreenShot(String MethodName) {
-		System.out.println(getDriver().getTitle());
-		TakesScreenshot ts = (TakesScreenshot) getDriver();
+	public void takeScreenShot(String MethodName, String browserType, WebDriver driver) {
+		//System.out.println(getDriver().getTitle());
+		//		TakesScreenshot ts = (TakesScreenshot) getDriver();
+		//		File srcFile = ts.getScreenshotAs(OutputType.FILE);
+		System.out.println(driver.getTitle());
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
-
-		File srcFile = ts.getScreenshotAs(OutputType.FILE);
 
 		try {
-			File destFile = new File(Constants.SCREENSHOT_PATH + Constants.CURRENT_EXECUTION_TIMESTAMP + "/" + MethodName + ".jpg");
+			File destFile = new File(Constants.SCREENSHOT_PATH + Constants.CURRENT_EXECUTION_TIMESTAMP + "/" + browserType + "/" + MethodName + ".jpg");
 
 			FileUtils.copyFile(srcFile, destFile);
 		} catch (IOException e) {

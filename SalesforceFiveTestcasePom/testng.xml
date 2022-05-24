@@ -10,19 +10,26 @@
 			<class name="com.tekarch.salesforce.tests.AutomationScripts">
 			</class>
 		</classes>
-	</test> 
-	<!-- <test name="TestFirefox">
+	</test>
+<!--	<test name="TestFirefox">
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
 			<class name="com.tekarch.salesforce.tests.AutomationScripts">
 			</class>
 		</classes>
-	</test> 
-	<test name="TestSafari"> 
+	</test>
+	<test name="TestSafari">
 		<parameter name="browser" value="safari"></parameter>
 		<classes>
 			<class name="com.tekarch.salesforce.tests.AutomationScripts">
 			</class>
 		</classes>
-	</test> -->
+	</test>
+	<test name="TestEdge">
+		<parameter name="browser" value="edge"></parameter>
+		<classes>
+			<class name="com.tekarch.salesforce.tests.AutomationScripts">
+			</class>
+		</classes>
+	</test>   -->
 </suite> <!-- Suite -->
