@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-05-25T12:06:25 PDT" name="Default suite" finished-at="2022-05-25T12:06:40 PDT" duration-ms="14918">
+    <groups>
+    </groups>
+    <test started-at="2022-05-25T12:06:25 PDT" name="Default test" finished-at="2022-05-25T12:06:40 PDT" duration-ms="14918">
+      <class name="com.tekarch.salesforce.tests.AutomationScripts">
+        <test-method is-config="true" signature="setUp(org.testng.ITestContext,java.lang.String)[pri:0, instance:com.tekarch.salesforce.tests.AutomationScripts@4dbb42b7]" started-at="2022-05-25T12:06:25 PDT" name="setUp" finished-at="2022-05-25T12:06:32 PDT" duration-ms="6864" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7f6874f2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="logintest_tc1()[pri:0, instance:com.tekarch.salesforce.tests.AutomationScripts@4dbb42b7]" started-at="2022-05-25T12:06:32 PDT" name="logintest_tc1" finished-at="2022-05-25T12:06:37 PDT" duration-ms="5801" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintest_tc1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.tekarch.salesforce.tests.AutomationScripts@4dbb42b7]" started-at="2022-05-25T12:06:37 PDT" name="tearDown" finished-at="2022-05-25T12:06:40 PDT" duration-ms="2157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.tekarch.salesforce.tests.AutomationScripts -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
